@@ -4,6 +4,7 @@ import Home from './Components/Home'
 import ProtectedRoute from "./Components/ProtectedRoute"
 import AddAddress from './Components/AddAddress'
 import CategoryProducts from './Components/CategoryProducts'
+import Profile from './Components/Profile'
 
 const App = () => (
   <BrowserRouter>
@@ -12,6 +13,7 @@ const App = () => (
     <ProtectedRoute exact path="/" component={Home} />
     <ProtectedRoute exact path="/address" component={AddAddress} />
     <ProtectedRoute exact path="/category/:category" component={CategoryProducts} />
+    <ProtectedRoute exact path="/profile" component={Profile} />
   </Switch>
   </BrowserRouter>
 )
