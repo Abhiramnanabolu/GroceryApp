@@ -80,10 +80,13 @@ class Profile extends Component{
         const {userDetails,userAddressDetails}=this.state
 
         return(
-            <div className="font-[Poppins]">
+            <div className="font-[Poppins] w-screen">
                 <Header3/>
                 <div className="p-16">
-                    <h1 className="text-2xl font-bold">Profile</h1>
+                    <div className="w-full">
+                        <h1 className="text-2xl font-bold">Profile</h1>
+                    </div>
+                    
                     <div className="bg-slate-200 mt-4">
                         <div className="flex flex-row">
                             <div className="w-32 p-2 border-2 border-slate-300">
