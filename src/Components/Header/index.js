@@ -82,6 +82,9 @@ class Header extends Component{
         console.log(userDetails.name)
         return(
             <div className="w-screen max-w-screen bg-emerald-950 flex flex-row items-center justify-between font-[Poppins]">
+                <Link to={"/"}>
+                    <img alt="logo" src="https://res.cloudinary.com/dbs6hvga4/image/upload/v1708149494/Grocify-logos_white_oul0xm.png" className="w-48 p-2"/>
+                </Link>
                 <img alt="logo" src="https://res.cloudinary.com/dbs6hvga4/image/upload/v1708149494/Grocify-logos_white_oul0xm.png" className="w-48 p-2"/>
                 
                 <div className="flex flex-row items-center">
