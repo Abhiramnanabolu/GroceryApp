@@ -86,14 +86,14 @@ class Header extends Component{
                 <div className="flex flex-row items-center">
                     <div className="">
                         {userAddressDetails.is_given==="1"?<div className="bg-emerald-900 rounded-md text-white font-[Poppins] text-xs mr-5 p-2">
-                            <p className="flex flex-row"><FaShippingFast className="text-xl mr-2"/>Get it in 13 hrs</p>
+                            <p className="flex flex-row"><FaShippingFast className="text-xl mr-2"/>Get it in {Math.floor(Math.random() * 10)} hrs</p>
                             <p className="">{userAddressDetails.address}</p>
                         </div>:<button className=" p-2 bg-black text-white mr-6">Add Address</button>}
                         
                     </div>
                     <FaCartShopping className="text-white text-2xl mr-8 ml-6"/>
                     <div className="">
-                        <div className="bg-white rounded-full w-10 h-10 mr-4 flex flex-row justify-center items-center">
+                        <div className="bg-white text-lg rounded-full w-10 h-10 mr-4 flex flex-row justify-center items-center">
                             {userDetails && userDetails.name && typeof userDetails.name === 'string' && userDetails.name.length > 0
                             ? userDetails.name.charAt(0).toUpperCase()
                             : ""}
