@@ -1,9 +1,7 @@
 import { Component } from "react";
 import Cookies from 'js-cookie'
-import { FaCartShopping } from "react-icons/fa6";
-import { FaShippingFast } from "react-icons/fa";
 
-class Header extends Component{
+class Header2 extends Component{
     state={userDetails:{},userAddressDetails:{}}
 
     getProfileDetails=async()=>{
@@ -77,29 +75,20 @@ class Header extends Component{
     }
 
     render(){
-        const {userDetails,userAddressDetails}=this.state
+        const {userDetails}=this.state
         console.log(userDetails.name)
         return(
-            <div className="w-screen max-w-screen bg-emerald-950 flex flex-row items-center justify-between font-[Poppins]">
+            <div className="w-screen bg-emerald-950 flex flex-row items-center justify-between font-[Poppins]">
                 <img alt="logo" src="https://res.cloudinary.com/dbs6hvga4/image/upload/v1708149494/Grocify-logos_white_oul0xm.png" className="w-48 p-2"/>
                 
                 <div className="flex flex-row items-center">
+                    
                     <div className="">
-                        {userAddressDetails.is_given==="1"?<div className="bg-emerald-900 rounded-md text-white font-[Poppins] text-xs mr-5 p-2">
-                            <p className="flex flex-row"><FaShippingFast className="text-xl mr-2"/>Get it in {Math.floor(Math.random() * 10)} hrs</p>
-                            <p className="">{userAddressDetails.address}</p>
-                        </div>:<button className=" p-2 bg-black text-white mr-6">Add Address</button>}
-                    </div>
-                    <button className="flex flex-row bg-black text-white mr-5 p-3 items-center rounded-lg">
-                      <FaCartShopping className="text-white text-xl mr-2"/>
-                      <p className="text-sm">My Cart</p>
-                    </button>
-                    <div className="">
-                        <button className="bg-white text-lg rounded-full w-10 h-10 mr-4 flex flex-row justify-center items-center">
+                        <div className="bg-white text-lg rounded-full w-10 h-10 mr-4 flex flex-row justify-center items-center">
                             {userDetails && userDetails.name && typeof userDetails.name === 'string' && userDetails.name.length > 0
                             ? userDetails.name.charAt(0).toUpperCase()
                             : ""}
-                        </button>
+                        </div>
                     </div>
                 </div>
                 
@@ -108,4 +97,4 @@ class Header extends Component{
     }
 }
 
-export default Header
+export default Header2
