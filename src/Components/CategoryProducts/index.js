@@ -128,6 +128,7 @@ class CategoryProducts extends Component{
                     </div>
                     <div className="w-9/12 overflow-auto p-4">
                         {/* Content for the right div */}
+                        
                         <div className="flex flex-row flex-wrap">
                             {productsList.map(eachItem=>(
                                 <ItemCard key={eachItem.id} pdetails={eachItem}/>

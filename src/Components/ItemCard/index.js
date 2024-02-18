@@ -14,7 +14,7 @@ const ItemCard=(props)=>{
         <div key={id} className="w-52 m-1 rounded p-3 border border-slate-200">
             <div className="border rounded-md border-slate-200">
                 <div className="bg-green-900 w-20 flex flex-row justify-center rounded-tl-lg rounded-br-lg">
-                    <p className="text-white text-xs p-1">{disPercent}</p>
+                    {parseInt(100-(dPrice/price)*100)==0?"":<p className="text-white text-xs p-1">{disPercent}</p>}
                 </div>
                 <img src={imgUrl} className="w-full"/>
             </div>
