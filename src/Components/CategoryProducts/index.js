@@ -27,8 +27,9 @@ class CategoryProducts extends Component{
         const {category} = params
         this.setState({cat:category})
         const subCat="Cucumber & Capsicum,Root Vegetables"
+        const subCat1=""
         try {
-            const response = await fetch(`http://localhost:3001/ec/products/${category}/${subCat}`, {
+            const response = await fetch(`http://localhost:3001/ec/products/${category}/${subCat1}`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
