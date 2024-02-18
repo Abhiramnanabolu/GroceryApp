@@ -85,8 +85,6 @@ class Header extends Component{
                 <Link to={"/"}>
                     <img alt="logo" src="https://res.cloudinary.com/dbs6hvga4/image/upload/v1708149494/Grocify-logos_white_oul0xm.png" className="w-48 p-2"/>
                 </Link>
-                <img alt="logo" src="https://res.cloudinary.com/dbs6hvga4/image/upload/v1708149494/Grocify-logos_white_oul0xm.png" className="w-48 p-2"/>
-                
                 <div className="flex flex-row items-center">
                     <div className="">
                         {userAddressDetails.is_given==="1"?<div className="bg-emerald-900 rounded-md text-white font-[Poppins] text-xs mr-5 p-2">
