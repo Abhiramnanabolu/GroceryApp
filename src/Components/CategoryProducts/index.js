@@ -29,7 +29,7 @@ class CategoryProducts extends Component{
         const subCat="Cucumber & Capsicum,Root Vegetables"
         const subCat1=""
         try {
-            const response = await fetch(`http://localhost:3001/ec/products/${category}/${subCat1}`, {
+            const response = await fetch(`http://localhost:3001/ec/products/${category}`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
@@ -111,11 +111,12 @@ class CategoryProducts extends Component{
                                     key={eachItem.subCategory}
                                   >
                                     <input
-                                      type="checkbox"
-                                      className=" m0p0"
-                                      value={eachItem.subCategory}
-                                      onChange={this.onChange1}
-                                    />
+                                        type="radio"
+                                        className="bg-emerald-950 text-emerald-950 checked:bg-emerald-950"
+                                        name="group1"
+                                        value={eachItem.subCategory}
+                                        onChange={this.onChange2}
+                                        />
                                     <p className="text-slate-600 ml-3 text-sm">{eachItem.subCategory}</p>
                                   </li>
                                 ))}
