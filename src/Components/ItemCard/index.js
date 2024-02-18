@@ -11,7 +11,7 @@ const ItemCard=(props)=>{
     }
 
     return(
-        <li key={id} className="w-72 rounded p-3 border border-slate-200">
+        <div key={id} className="w-52 m-1 rounded p-3 border border-slate-200">
             <div className="border rounded-md border-slate-200">
                 <div className="bg-green-900 w-20 flex flex-row justify-center rounded-tl-lg rounded-br-lg">
                     <p className="text-white text-xs p-1">{disPercent}</p>
@@ -26,7 +26,7 @@ const ItemCard=(props)=>{
                 <p className="text-xs text-gray-500 line-through pt-1 pl-1">{price}</p>
             </div>
             <button className="p-1 rounded text-white bg-red-600 w-32 mt-3" onClick={onClickAddBtn}>Add</button>
-        </li>
+        </div>
     )
 }
 

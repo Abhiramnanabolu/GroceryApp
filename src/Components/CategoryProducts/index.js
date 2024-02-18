@@ -1,6 +1,8 @@
 import {Component} from 'react'
+import ItemCard from '../ItemCard'
 import Header from '../Header'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import "./index.css"
 
 class CategoryProducts extends Component{
     state={productsList:[],productCount:"",cat:"",subCategories:[]}
@@ -87,7 +89,7 @@ class CategoryProducts extends Component{
 
 
     render(){
-        const {productCount,cat,subCategories}=this.state
+        const {productsList,productCount,cat,subCategories}=this.state
         return(
             <div className="flex flex-col h-screen font-[Poppins]">
                 <Header />
@@ -126,175 +128,10 @@ class CategoryProducts extends Component{
                     </div>
                     <div className="w-9/12 overflow-auto p-4">
                         {/* Content for the right div */}
-                        <div className="mt-2">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p><p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent
-                            libero. Sed cursus ante dapibus diam. Sed nisi.
-                        </p>
-
+                        <div className="flex flex-row flex-wrap">
+                            {productsList.map(eachItem=>(
+                                <ItemCard key={eachItem.id} pdetails={eachItem}/>
+                            ))}
                         </div>
                     </div>
                 </div>
