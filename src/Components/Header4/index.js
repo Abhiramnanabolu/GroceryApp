@@ -1,10 +1,9 @@
 import { Component } from "react";
 import Cookies from 'js-cookie'
-import { FaCartShopping } from "react-icons/fa6";
 import { FaShippingFast } from "react-icons/fa";
 import {Link} from 'react-router-dom'
 
-class Header extends Component{
+class Header4 extends Component{
     state={userDetails:{},userAddressDetails:{}}
 
     getProfileDetails=async()=>{
@@ -94,12 +93,7 @@ class Header extends Component{
                           </div>:<Link to={`/address`}><button className=" p-2 bg-black text-white mr-6">Add Address</button></Link>}
                       </div>
                     </Link>
-                    <Link to={`/cart`}>
-                      <button className="flex flex-row bg-black text-white mr-5 p-3 items-center rounded-lg">
-                        <FaCartShopping className="text-white text-xl mr-2"/>
-                        <p className="text-sm">My Cart</p>
-                      </button>
-                    </Link>
+                    
                     <Link to={`/profile`}>
                         <button className="bg-white text-lg rounded-full w-10 h-10 mr-4 flex flex-row justify-center items-center">
                             {userDetails && userDetails.name && typeof userDetails.name === 'string' && userDetails.name.length > 0
@@ -114,4 +108,4 @@ class Header extends Component{
     }
 }
 
-export default Header
+export default Header4

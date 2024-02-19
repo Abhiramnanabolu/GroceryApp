@@ -1,10 +1,11 @@
-import {Route, Switch, Redirect,BrowserRouter} from 'react-router-dom'
+import {Route, Switch,BrowserRouter} from 'react-router-dom'
 import Login from './Components/Login'
 import Home from './Components/Home'
 import ProtectedRoute from "./Components/ProtectedRoute"
 import AddAddress from './Components/AddAddress'
 import CategoryProducts from './Components/CategoryProducts'
 import Profile from './Components/Profile'
+import Cart from './Components/Cart'
 
 const App = () => (
   <BrowserRouter>
@@ -14,6 +15,7 @@ const App = () => (
     <ProtectedRoute exact path="/address" component={AddAddress} />
     <ProtectedRoute exact path="/category/:category" component={CategoryProducts} />
     <ProtectedRoute exact path="/profile" component={Profile} />
+    <ProtectedRoute exact path="/cart" component={Cart} />
   </Switch>
   </BrowserRouter>
 )
