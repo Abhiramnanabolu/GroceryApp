@@ -86,11 +86,13 @@ class Header2 extends Component{
                 <div className="flex flex-row items-center">
                     
                     <div className="">
-                        <div className="bg-white text-lg rounded-full w-10 h-10 mr-4 flex flex-row justify-center items-center">
+                    <Link to={`/profile`}>
+                        <button className="bg-white text-lg rounded-full w-10 h-10 mr-4 flex flex-row justify-center items-center">
                             {userDetails && userDetails.name && typeof userDetails.name === 'string' && userDetails.name.length > 0
                             ? userDetails.name.charAt(0).toUpperCase()
                             : ""}
-                        </div>
+                        </button>
+                    </Link>
                     </div>
                 </div>
                 

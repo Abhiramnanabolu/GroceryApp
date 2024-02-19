@@ -109,7 +109,7 @@ class Profile extends Component{
                                 <h1>Address</h1>
                             </div>
                             <div className=" p-2 border-2 border-slate-300 w-full">
-                                {userAddressDetails.is_given==="0"?<button className="w-32 p-2 bg-black text-white mr-6">Add Address</button>:<h1>{userAddressDetails.address}</h1>}
+                                {userAddressDetails.is_given==="0"?<Link to={`/address`} className="bg-emerald-950 text-white p-1">Add Address</Link>:<h1>{userAddressDetails.address}</h1>}
                             </div>
                         </div>
                     </div>
