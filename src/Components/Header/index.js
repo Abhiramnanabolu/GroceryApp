@@ -90,7 +90,7 @@ class Header extends Component{
                         {userAddressDetails.is_given==="1"?<div className="bg-emerald-900 rounded-md text-white font-[Poppins] text-xs mr-5 p-2">
                             <p className="flex flex-row"><FaShippingFast className="text-xl mr-2"/>Get it in {Math.floor(Math.random() * 30)} hrs</p>
                             <p className="">{userAddressDetails.address}</p>
-                        </div>:<button className=" p-2 bg-black text-white mr-6">Add Address</button>}
+                        </div>:<Link to={`/address`}><button className=" p-2 bg-black text-white mr-6">Add Address</button></Link>}
                     </div>
                     <button className="flex flex-row bg-black text-white mr-5 p-3 items-center rounded-lg">
                       <FaCartShopping className="text-white text-xl mr-2"/>
