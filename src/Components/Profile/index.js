@@ -109,7 +109,7 @@ class Profile extends Component{
                                 <h1>Address</h1>
                             </div>
                             <div className=" p-2 border-2 border-slate-300 w-full">
-                                {userAddressDetails.is_given===0?<p>Add Address</p>:<h1>{userAddressDetails.address}</h1>}
+                                {userAddressDetails.is_given==="0"?<div>Add Address</div>:<h1>{userAddressDetails.address}</h1>}
                             </div>
                         </div>
                     </div>
