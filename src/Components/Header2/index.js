@@ -1,4 +1,5 @@
 import { Component } from "react";
+import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 class Header2 extends Component{
@@ -79,8 +80,9 @@ class Header2 extends Component{
         console.log(userDetails.name)
         return(
             <div className="w-screen bg-emerald-950 flex flex-row items-center justify-between font-[Poppins]">
-                <img alt="logo" src="https://res.cloudinary.com/dbs6hvga4/image/upload/v1708149494/Grocify-logos_white_oul0xm.png" className="w-48 p-2"/>
-                
+                <Link to={"/"}>
+                    <img alt="logo" src="https://res.cloudinary.com/dbs6hvga4/image/upload/v1708149494/Grocify-logos_white_oul0xm.png" className="w-48 p-2"/>
+                </Link>
                 <div className="flex flex-row items-center">
                     
                     <div className="">
