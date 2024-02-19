@@ -5,11 +5,18 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import "./index.css"
 
 class CategoryProducts extends Component{
-    state={productsList:[],productCount:"",cat:"",subCategories:[]}
+    state={productsList:[],productCount:"",cat:"",subCategories:[],subcat:""}
     
     componentDidMount() {
-        this.getCategoryProducts()
         this.getSubCategories()
+        this.getCategoryProducts2()
+    }
+
+    onChange2 = e => {
+      const {subcat} = this.state
+      this.setState({subcat: e.target.value}, () => {
+        this.getCategoryProducts2() 
+      })
     }
 
     filterObjectsWithSpecialChars=(objects)=> {
@@ -41,6 +48,45 @@ class CategoryProducts extends Component{
             if (response.ok) {
               const productsData = await response.json();
               console.log("Products:", productsData);
+              this.setState({ productsList:productsData ,productCount:productsData.length });
+              
+              // Handle the user address data as needed
+            } else {
+              const errorData = await response.json();
+              console.error("Error fetching products:", errorData.error);
+          
+              // Handle the error
+            }
+          } catch (error) {
+            console.error("Error during products fetch:", error.message);
+          
+            // Handle other errors
+          }
+      }
+
+      getCategoryProducts2 = async () => {
+        const {cat,subcat}=this.state
+        const {match} = this.props
+        const {params} = match
+        const {category} = params
+        this.setState({cat:category})
+        const subCat="Cucumber & Capsicum,Root Vegetables"
+        const subCat1=""
+        try {
+            const response = await fetch(`http://localhost:3001/ec/products/`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                category: category,
+                subcategory:subcat
+              })
+            });
+          
+            if (response.ok) {
+              const productsData = await response.json();
+              console.log("Products2:", productsData);
               this.setState({ productsList:productsData ,productCount:productsData.length });
               
               // Handle the user address data as needed
