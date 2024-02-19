@@ -152,15 +152,15 @@ class AddAddress extends Component{
                             <div className="w-32 p-2 border-2 border-slate-300">
                                 <h1>Address</h1>
                             </div>
-                            <div className=" p-2 border-2 border-slate-300 w-full">
-                                <input type="text" onChange={this.onInpChange} value={userAddressDetails.address} placeholder="Enter Address" className="p-2 text-slate-600 w-full"/>
+                            <div className=" p-2 border-2 border-slate-300 w-full flex flex-col">
+                                {userAddressDetails.is_given==="0"?"":<p>{`Current : ${userAddressDetails.address}`}</p>}
+                                <input type="text" onChange={this.onInpChange} placeholder="Enter Address" className="p-2 text-slate-600 w-full"/>
                             </div>
                         </div>
                     </div>
                     <p className="text-red-500">{errorstring}</p>
                     <p className="text-emerald-500">{successstring}</p>
                     <button onClick={this.setAddress} className="bg-emerald-950 text-white py-1 px-6 mt-8">Save</button>
-                    
                 </div>
             </div>
         )
