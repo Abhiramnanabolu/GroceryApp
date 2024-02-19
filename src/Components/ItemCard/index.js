@@ -1,4 +1,5 @@
 import { Component } from "react"
+import Cookies from 'js-cookie'
 
 class ItemCard extends Component {
     state={q:0}
@@ -14,8 +15,49 @@ class ItemCard extends Component {
     }
 
     onQInc=()=>{
-        this.setState((prevState)=>({q:prevState.q+1}))
+        this.setState((prevState)=>({q:prevState.q+1}),
+        () => {
+          this.addToCart() // Move API call here to ensure updated state
+        },)
     }
+
+    
+
+    addToCart = async () => {
+        console.log("addToCart Triggered")
+        const {pdetails}=this.props
+        const {q}=this.state
+        const apiUrl = 'http://localhost:3001/ec/cart/add';
+        const uId = Cookies.get('uid')
+        const requestData = {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+            userId: uId,
+            productId: pdetails.productId,
+            quantity: 2,
+            price: pdetails.dPrice,
+            }),
+        };
+
+        try {
+            const response = await fetch(apiUrl, requestData);
+
+            if (response.ok) {
+            const responseData = await response.json();
+            console.log('Success:', responseData);
+            } else {
+            const errorData = await response.json();
+            console.error('Error:', errorData);
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+        };
+
+
 
     render(){
     const {pdetails}=this.props
