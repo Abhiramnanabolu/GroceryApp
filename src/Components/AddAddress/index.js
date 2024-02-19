@@ -1,6 +1,5 @@
 import {Component} from "react"
 import Header2 from "../Header2"
-import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 class AddAddress extends Component{
@@ -71,7 +70,7 @@ class AddAddress extends Component{
     }
 
     setAddress=async()=>{
-        const {addressInput,errorstring,successstring}=this.state
+        const {addressInput}=this.state
         if (addressInput.length>5){
             try {
                 const uId = Cookies.get('uid')

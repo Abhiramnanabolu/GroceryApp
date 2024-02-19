@@ -13,7 +13,6 @@ class CategoryProducts extends Component{
     }
 
     onChange2 = e => {
-      const {subcat} = this.state
       this.setState({subcat: e.target.value}, () => {
         this.getCategoryProducts2() 
       })
@@ -35,8 +34,6 @@ class CategoryProducts extends Component{
         const {params} = match
         const {category} = params
         this.setState({cat:category})
-        const subCat="Cucumber & Capsicum,Root Vegetables"
-        const subCat1=""
         try {
             const response = await fetch(`http://localhost:3001/ec/products/${category}`, {
               method: "GET",
@@ -65,13 +62,12 @@ class CategoryProducts extends Component{
       }
 
       getCategoryProducts2 = async () => {
-        const {cat,subcat}=this.state
+        const {subcat}=this.state
         const {match} = this.props
         const {params} = match
         const {category} = params
         this.setState({cat:category})
-        const subCat="Cucumber & Capsicum,Root Vegetables"
-        const subCat1=""
+        
         try {
             const response = await fetch(`http://localhost:3001/ec/products/`, {
               method: "POST",
@@ -108,7 +104,6 @@ class CategoryProducts extends Component{
         const {params} = match
         const {category} = params
         this.setState({cat:category})
-        const subCat="Cucumber & Capsicum,Root Vegetables"
         try {
             const response = await fetch(`http://localhost:3001/ec/subcategories/${category}`, {
               method: "GET",
