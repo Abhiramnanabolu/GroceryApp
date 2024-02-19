@@ -128,7 +128,7 @@ class AddAddress extends Component{
                 <Header2/>
                 <div className="p-16">
                     <div className="w-full">
-                        <h1 className="text-2xl font-bold">Add Address</h1>
+                        <h1 className="text-2xl font-bold">Add / Change Address</h1>
                     </div>
                     
                     <div className="bg-slate-200 mt-4">
@@ -153,7 +153,7 @@ class AddAddress extends Component{
                                 <h1>Address</h1>
                             </div>
                             <div className=" p-2 border-2 border-slate-300 w-full">
-                                <input type="text" onChange={this.onInpChange} placeholder="Enter Address" className="p-2 w-full"/>
+                                <input type="text" onChange={this.onInpChange} value={userAddressDetails.address} placeholder="Enter Address" className="p-2 text-slate-600 w-full"/>
                             </div>
                         </div>
                     </div>
