@@ -14,7 +14,7 @@ class CartItem2 extends Component{
     removeFromCart=async()=>{
         const {data}=this.state
         console.log(data.productId)
-        const {refresh}=this.props
+        const {refreshCartAfterProductRemoval}=this.props
         const apiUrl = 'http://localhost:3001/ec/cart/remove';
         const uId = Cookies.get('uid')
         const requestData = {
@@ -34,7 +34,7 @@ class CartItem2 extends Component{
             if (response.ok) {
             const responseData = await response.json();
             console.log('Success:', responseData);
-            this.refresh()
+            this.refreshCartAfterProductRemoval()
             } else {
             const errorData = await response.json();
             console.error('Error:', errorData);
