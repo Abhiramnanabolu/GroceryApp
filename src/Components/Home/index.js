@@ -26,7 +26,7 @@ class Home extends Component {
               <h1 className="text-lg font-semibold">Shop by Category</h1>
               <div className="max-w-full mt-2 flex flex-row flex-wrap ">
                 {categoryList.map(eachItem=>(
-                  <CategoryCard catDetails={eachItem}/>
+                  <CategoryCard catDetails={eachItem} key={eachItem.categoryName}/>
                 ))}
               </div>
             </div>
