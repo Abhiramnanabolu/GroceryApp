@@ -50,6 +50,10 @@ class Cart extends Component{
           }
     }
 
+    refreshCartAfterProductRemoval=()=>{
+        this.getProductsInCart()
+    }
+
     render(){
         const {history} = this.props
         const {productsInCart,total,discount}=this.state
@@ -65,7 +69,7 @@ class Cart extends Component{
                     <div className=" m-10 flex flex-row ">
                         <div className="w-9/12 bg-white rounded drop-shadow-2xl mr-12">
                             {productsInCart.map(eachItem=>(
-                                <CartItem2 itemDetails={eachItem} calTotal={this.calTotalPrice} calDiscount={this.calDiscountPrice}/>
+                                <CartItem2 itemDetails={eachItem} refresh={this.refreshCartAfterProductRemoval} calTotal={this.calTotalPrice} calDiscount={this.calDiscountPrice}/>
                             ))}
                         </div>
                         <div className="w-3/12 h-fit p-4 bg-white font-[Poppins]  drop-shadow-lg">
