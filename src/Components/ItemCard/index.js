@@ -4,29 +4,11 @@ import Cookies from 'js-cookie'
 class ItemCard extends Component {
     state={q:0}
 
-    onClickAddBtn=(productId)=>{
+    onClickAddBtn=async(productId)=>{
         const {pdetails}=this.props
         console.log(productId,pdetails.productName)
         this.setState({q:1})
-    }
-
-    onQDec=()=>{
-        this.setState((prevState)=>({q:prevState.q-1}))
-    }
-
-    onQInc=()=>{
-        this.setState((prevState)=>({q:prevState.q+1}),
-        () => {
-          this.addToCart() // Move API call here to ensure updated state
-        },)
-    }
-
-    
-
-    addToCart = async () => {
-        console.log("addToCart Triggered")
-        const {pdetails}=this.props
-        const {q}=this.state
+        console.log("onClickAdd Triggered")
         const apiUrl = 'http://localhost:3001/ec/cart/add';
         const uId = Cookies.get('uid')
         const requestData = {
@@ -37,7 +19,7 @@ class ItemCard extends Component {
             body: JSON.stringify({
             userId: uId,
             productId: pdetails.productId,
-            quantity: 2,
+            quantity: 1,
             price: pdetails.dPrice,
             }),
         };
@@ -55,7 +37,96 @@ class ItemCard extends Component {
         } catch (error) {
             console.error('Error:', error.message);
         }
+    }
+
+    onQDec=()=>{
+        const {q}=this.state
+        if (q===1){
+            this.setState((prevState)=>({q:prevState.q-1}),
+            () => {
+              this.removeFromCart() // Move API call here to ensure updated state
+            },)
+        }
+        else{
+            this.setState((prevState)=>({q:prevState.q-1}),
+            () => {
+              this.addToCart() // Move API call here to ensure updated state
+            },)
+        }
+        
+    }
+
+    onQInc=()=>{
+        this.setState((prevState)=>({q:prevState.q+1}),
+        () => {
+          this.addToCart() // Move API call here to ensure updated state
+        },)
+    }
+
+    
+
+    addToCart = async () => {
+        const q = this.state
+        const {pdetails}=this.props
+        const apiUrl = 'http://localhost:3001/ec/cart/update-quantity';
+        const uId = Cookies.get('uid')
+        const requestData = {
+            method: 'PUT',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+            userId: uId,
+            productId: pdetails.productId,
+            newQuantity: q.q
+            }),
         };
+
+        try {
+            const response = await fetch(apiUrl, requestData);
+
+            if (response.ok) {
+            const responseData = await response.json();
+            console.log('Success:', responseData);
+            } else {
+            const errorData = await response.json();
+            console.error('Error:', errorData);
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    };
+
+    removeFromCart = async () => {
+        console.log("removeFromCart Triggered")
+        const {pdetails}=this.props
+        const apiUrl = 'http://localhost:3001/ec/cart/remove';
+        const uId = Cookies.get('uid')
+        const requestData = {
+            method: 'DELETE',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+            userId: uId,
+            productId: pdetails.productId
+            }),
+        };
+
+        try {
+            const response = await fetch(apiUrl, requestData);
+
+            if (response.ok) {
+            const responseData = await response.json();
+            console.log('Success:', responseData);
+            } else {
+            const errorData = await response.json();
+            console.error('Error:', errorData);
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    };
 
 
 
