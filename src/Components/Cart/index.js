@@ -3,7 +3,6 @@ import { FaArrowLeft } from "react-icons/fa";
 import Header4 from "../Header4";
 import Cookies from "js-cookie";
 import CartItem2 from "../CartItem2";
-import { Link } from "react-router-dom/cjs/react-router-dom";
 
 class Cart extends Component{
     state={productsInCart:[],total:0,discount:0}
@@ -75,8 +74,7 @@ class Cart extends Component{
                                     <button className="mt-6 bg-black text-white px-4 py-2 rounded">Order Now</button>
                                 </Link>
                             </div>
-                        </div>:
-                    <div className=" m-10 flex flex-row ">
+                        </div>:<div className=" m-10 flex flex-row ">
                         <div className="w-9/12 bg-white rounded drop-shadow-2xl mr-12">
                             {productsInCart.map(eachItem=>(
                                 <CartItem2 itemDetails={eachItem} refreshCartAfterProductRemoval={this.refreshCartAfterProductRemoval} calTotal={this.calTotalPrice} calDiscount={this.calDiscountPrice}/>
@@ -106,8 +104,7 @@ class Cart extends Component{
                                 </div>
                             </div>
                         </div>
-                    </div>}
-                    
+                    </div>
                 </div>
             </div>
         )
