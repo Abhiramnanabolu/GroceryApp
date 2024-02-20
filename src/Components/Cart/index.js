@@ -3,6 +3,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import Header4 from "../Header4";
 import Cookies from "js-cookie";
 import CartItem2 from "../CartItem2";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 class Cart extends Component{
     state={productsInCart:[],total:0,discount:0}
@@ -66,7 +67,15 @@ class Cart extends Component{
                         <p className="text-slate-600 font-light ml-2">Back</p>
                     </button>
                     <h1 className="font-bold text-2xl ml-8 mt-4">Your Cart</h1>
-                    <div className=" m-10 flex flex-row ">
+                    {productsInCart.length===0?
+                        <div className="w-full h-64 flex flex-row justify-center drop-shadow-2xl items-center p-10">
+                            <div className="drop-shadow-xl flex flex-col justify-center items-center ">
+                                <h1 className="mt-4">Your Cart is Empty</h1>
+                                <Link to={"/"}>
+                                    <button className="mt-6 bg-black text-white px-4 py-2 rounded">Order Now</button>
+                                </Link>
+                            </div>
+                        </div>:<div className=" m-10 flex flex-row ">
                         <div className="w-9/12 bg-white rounded drop-shadow-2xl mr-12">
                             {productsInCart.map(eachItem=>(
                                 <CartItem2 itemDetails={eachItem} refreshCartAfterProductRemoval={this.refreshCartAfterProductRemoval} calTotal={this.calTotalPrice} calDiscount={this.calDiscountPrice}/>
@@ -96,7 +105,8 @@ class Cart extends Component{
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>}
+                    
                 </div>
             </div>
         )
