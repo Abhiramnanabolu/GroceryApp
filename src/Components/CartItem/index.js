@@ -12,7 +12,7 @@ class CartItem extends Component{
         const {itemDetails}=this.props
         const productid=itemDetails.product_id
         try {
-            const response = await fetch(`http://localhost:3001/ec/product/${productid}`);
+            const response = await fetch(`http://ec2-13-200-215-253.ap-south-1.compute.amazonaws.com:8080/ec/product/${productid}`);
             console.log(response)
             if (response.ok) {
             const productDetails = await response.json();
