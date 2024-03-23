@@ -36,7 +36,7 @@ class Login extends Component {
         const {eInput,pInput}=this.state
         try {
             console.log(eInput,pInput)
-            const response = await fetch("http://ec2-13-200-215-253.ap-south-1.compute.amazonaws.com:8080/ec/user/login", {
+            const response = await fetch("https://apin.abhiramreddy.shop/ec/user/login", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
