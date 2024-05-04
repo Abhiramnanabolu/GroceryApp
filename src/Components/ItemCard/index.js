@@ -44,13 +44,13 @@ class ItemCard extends Component {
         if (q===1){
             this.setState((prevState)=>({q:prevState.q-1}),
             () => {
-              this.removeFromCart() // Move API call here to ensure updated state
+              this.removeFromCart() 
             },)
         }
         else{
             this.setState((prevState)=>({q:prevState.q-1}),
             () => {
-              this.addToCart() // Move API call here to ensure updated state
+              this.addToCart() 
             },)
         }
         
@@ -59,7 +59,7 @@ class ItemCard extends Component {
     onQInc=()=>{
         this.setState((prevState)=>({q:prevState.q+1}),
         () => {
-          this.addToCart() // Move API call here to ensure updated state
+          this.addToCart() 
         },)
     }
 

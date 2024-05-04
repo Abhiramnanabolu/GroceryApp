@@ -10,7 +10,7 @@ class Header4 extends Component{
         const uId = Cookies.get('uid')
         console.log(uId)
         try {
-            const userId = uId; // Replace with the actual userId you want to fetch
+            const userId = uId; 
           
             const response = await fetch(`https://apin.abhiramreddy.shop/ec/user/${userId}`, {
               method: "GET",
@@ -24,24 +24,24 @@ class Header4 extends Component{
               console.log("User Details:", userData);
               this.setState({userDetails:userData})
           
-              // Handle the user data as needed
+              
             } else {
               const errorData = await response.json();
               console.error("Error fetching user details:", errorData.error);
           
-              // Handle the error
+              
             }
           } catch (error) {
             console.error("Error during user details fetch:", error.message);
           
-            // Handle other errors
+           
           }
     }
 
     getAddress=async()=>{
         const uId = Cookies.get('uid')
         try {
-            const userId = uId; // Replace with the actual userId you want to fetch
+            const userId = uId; 
           
             const response = await fetch(`https://apin.abhiramreddy.shop/ec/user/address/${userId}`, {
               method: "GET",
@@ -55,17 +55,16 @@ class Header4 extends Component{
               console.log("User Address Details:", userAddressData);
               this.setState({ userAddressDetails: userAddressData[0] });
           
-              // Handle the user address data as needed
             } else {
               const errorData = await response.json();
               console.error("Error fetching user address details:", errorData.error);
           
-              // Handle the error
+              
             }
           } catch (error) {
             console.error("Error during user address details fetch:", error.message);
           
-            // Handle other errors
+           
           }
           
     }

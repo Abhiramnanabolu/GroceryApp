@@ -53,16 +53,16 @@ class Login extends Component {
               console.log(data.token)
               this.onSubmitSuccess(data.token,data.user_id)
         
-              // You can handle the successful login here, e.g., store the token in localStorage
+              
             } else {
               const errorData = await response.json();
               console.error("Login failed:", errorData.error);
         
-              // You can handle the failed login here, e.g., show an error message
+              
             }
           } catch (error) {
             console.error("Error during login:", error.message);
-            // You can handle other errors here
+            
           }
       }
 

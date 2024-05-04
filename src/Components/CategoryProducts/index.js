@@ -19,10 +19,10 @@ class CategoryProducts extends Component{
     }
 
     filterObjectsWithSpecialChars=(objects)=> {
-          // Filter out objects where subcategory contains / or "
+          
           const filteredObjects = objects.filter((obj) => {
-            const subcategoryValue = obj.subCategory || ''; // Handle cases where subCategory is undefined
-            return !subcategoryValue.includes('\"'); // Check for backslash '\'
+            const subcategoryValue = obj.subCategory || ''; 
+            return !subcategoryValue.includes('\"'); 
           });
         
           return filteredObjects;
@@ -47,17 +47,14 @@ class CategoryProducts extends Component{
               console.log("Products:", productsData);
               this.setState({ productsList:productsData ,productCount:productsData.length });
               
-              // Handle the user address data as needed
             } else {
               const errorData = await response.json();
               console.error("Error fetching products:", errorData.error);
           
-              // Handle the error
             }
           } catch (error) {
             console.error("Error during products fetch:", error.message);
           
-            // Handle other errors
           }
       }
 
@@ -85,17 +82,14 @@ class CategoryProducts extends Component{
               console.log("Products2:", productsData);
               this.setState({ productsList:productsData ,productCount:productsData.length });
               
-              // Handle the user address data as needed
             } else {
               const errorData = await response.json();
               console.error("Error fetching products:", errorData.error);
           
-              // Handle the error
             }
           } catch (error) {
             console.error("Error during products fetch:", error.message);
           
-            // Handle other errors
           }
       }
 
@@ -144,7 +138,7 @@ class CategoryProducts extends Component{
                 </div>
                 <div className="flex-1 flex overflow-hidden">
                     <div className="w-3/12 overflow-auto p-4">
-                        {/* Content for the left div */}
+                       
                         <div className="px-4 mt-2">
                             <p className="font-medium">Shop By Sub-Category</p>
                             <ul className="list-none mt-4">
@@ -165,10 +159,10 @@ class CategoryProducts extends Component{
                                 ))}
                             </ul>
                         </div>
-                        {/* Add more content as needed */}
+                       
                     </div>
                     <div className="w-9/12 overflow-auto p-4">
-                        {/* Content for the right div */}
+                        
                         
                         <div className="flex flex-row flex-wrap">
                             {productsList.map(eachItem=>(

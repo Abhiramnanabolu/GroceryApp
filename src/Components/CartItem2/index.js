@@ -80,7 +80,7 @@ class CartItem2 extends Component{
     render(){
         const {data} = this.state
         const {itemDetails}=this.props
-        const {productName,brand,price,dPrice}=data//,imgUrl,quantity,productId (other variables in data object)
+        const {productName,brand,price,dPrice}=data
         const priceinrupee="₹"+dPrice
         const disPercent=parseInt(100-(dPrice/price)*100)+"%"
         return(

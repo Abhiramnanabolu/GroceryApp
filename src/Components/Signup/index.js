@@ -60,16 +60,13 @@ class Signup extends Component {
               console.log(data.token)
               this.onSubmitSuccess(data.token,data.user_id)
         
-              // You can handle the successful login here, e.g., store the token in localStorage
             } else {
               const errorData = await response.json();
               console.error("Login failed:", errorData.error);
         
-              // You can handle the failed login here, e.g., show an error message
             }
           } catch (error) {
             console.error("Error during login:", error.message);
-            // You can handle other errors here
           }
       }
 
@@ -151,7 +148,7 @@ class Signup extends Component {
                                 className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
                                 onClick={this.onSub}
                                 >
-                                Sign In
+                                Sign Up
                                 </button>
                             </div>
                             </div>

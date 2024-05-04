@@ -37,17 +37,14 @@ class Cart extends Component{
               const cartData = await response.json();
               this.setState({productsInCart:cartData})
           
-              // Handle the user data as needed
             } else {
               const errorData = await response.json();
               console.error("Error fetching user details:", errorData.error);
           
-              // Handle the error
             }
           } catch (error) {
             console.error("Error during user details fetch:", error.message);
           
-            // Handle other errors
           }
     }
 
