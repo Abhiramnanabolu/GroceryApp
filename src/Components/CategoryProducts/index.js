@@ -35,7 +35,7 @@ class CategoryProducts extends Component{
         const {category} = params
         this.setState({cat:category})
         try {
-            const response = await fetch(`http://apin.abhiramreddy.shop/ec/products/${category}`, {
+            const response = await fetch(`https://apin.abhiramreddy.shop/ec/products/${category}`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
@@ -69,7 +69,7 @@ class CategoryProducts extends Component{
         this.setState({cat:category})
         
         try {
-            const response = await fetch(`http://apin.abhiramreddy.shop/ec/products/`, {
+            const response = await fetch(`https://apin.abhiramreddy.shop/ec/products/`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -105,7 +105,7 @@ class CategoryProducts extends Component{
         const {category} = params
         this.setState({cat:category})
         try {
-            const response = await fetch(`http://apin.abhiramreddy.shop/ec/subcategories/${category}`, {
+            const response = await fetch(`https://apin.abhiramreddy.shop/ec/subcategories/${category}`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",

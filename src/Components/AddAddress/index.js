@@ -11,7 +11,7 @@ class AddAddress extends Component{
         try {
             const userId = uId; // Replace with the actual userId you want to fetch
           
-            const response = await fetch(`http://apin.abhiramreddy.shop/ec/user/${userId}`, {
+            const response = await fetch(`https://apin.abhiramreddy.shop/ec/user/${userId}`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
@@ -42,7 +42,7 @@ class AddAddress extends Component{
         try {
             const userId = uId; // Replace with the actual userId you want to fetch
           
-            const response = await fetch(`http://apin.abhiramreddy.shop/ec/user/address/${userId}`, {
+            const response = await fetch(`https://apin.abhiramreddy.shop/ec/user/address/${userId}`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
@@ -75,7 +75,7 @@ class AddAddress extends Component{
             try {
                 const uId = Cookies.get('uid')
                 
-                const response = await fetch(`http://apin.abhiramreddy.shop/ec/add-address`, {
+                const response = await fetch(`https://apin.abhiramreddy.shop/ec/add-address`, {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
