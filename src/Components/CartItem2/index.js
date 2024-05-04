@@ -19,7 +19,7 @@ class CartItem2 extends Component{
     removeFromCart=async()=>{
         const {data}=this.state
         console.log(data.productId)
-        const apiUrl = 'https://apin.abhiramreddy.shop/ec/cart/remove';
+        const apiUrl = 'http://apin.abhiramreddy.shop/ec/cart/remove';
         const uId = Cookies.get('uid')
         const requestData = {
             method: 'DELETE',
@@ -59,7 +59,7 @@ class CartItem2 extends Component{
         const {itemDetails}=this.props
         const productid=itemDetails.product_id
         try {
-            const response = await fetch(`https://apin.abhiramreddy.shop/ec/product/${productid}`);
+            const response = await fetch(`http://apin.abhiramreddy.shop/ec/product/${productid}`);
             if (response.ok) {
             const productDetails = await response.json();
             console.log("Product Details:", productDetails);

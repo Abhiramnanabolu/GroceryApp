@@ -9,7 +9,7 @@ class ItemCard extends Component {
         console.log(productId,pdetails.productName)
         this.setState({q:1})
         console.log("onClickAdd Triggered")
-        const apiUrl = 'https://apin.abhiramreddy.shop/ec/cart/add';
+        const apiUrl = 'http://apin.abhiramreddy.shop/ec/cart/add';
         const uId = Cookies.get('uid')
         const requestData = {
             method: 'POST',
@@ -68,7 +68,7 @@ class ItemCard extends Component {
     addToCart = async () => {
         const q = this.state
         const {pdetails}=this.props
-        const apiUrl = 'https://apin.abhiramreddy.shop/ec/cart/update-quantity';
+        const apiUrl = 'http://apin.abhiramreddy.shop/ec/cart/update-quantity';
         const uId = Cookies.get('uid')
         const requestData = {
             method: 'PUT',
@@ -100,7 +100,7 @@ class ItemCard extends Component {
     removeFromCart = async () => {
         console.log("removeFromCart Triggered")
         const {pdetails}=this.props
-        const apiUrl = 'https://apin.abhiramreddy.shop/ec/cart/remove';
+        const apiUrl = 'http://apin.abhiramreddy.shop/ec/cart/remove';
         const uId = Cookies.get('uid')
         const requestData = {
             method: 'DELETE',

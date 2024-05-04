@@ -23,7 +23,7 @@ class Cart extends Component{
     getProductsInCart=async()=>{
         const uId = Cookies.get('uid')
         try {
-            const response = await fetch(`https://apin.abhiramreddy.shop/ec/cart/products`, {
+            const response = await fetch(`http://apin.abhiramreddy.shop/ec/cart/products`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

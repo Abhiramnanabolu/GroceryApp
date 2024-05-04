@@ -2,13 +2,19 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
 
-class Login extends Component {
-    state={eInput:"",pInput:""}
+class Signup extends Component {
+    state={eInput:"",pInput:"",nInput:""}
 
     onChangeEmail = (e) => {
         const {eInput}=this.state
         this.setState({ eInput: e.target.value });
         console.log(eInput)
+      };
+    
+      onChangeName = (e) => {
+        const {nInput}=this.state
+        this.setState({ nInput: e.target.value });
+        console.log(nInput)
       };
     
       onChangePassword = (e) => {
@@ -33,15 +39,16 @@ class Login extends Component {
 
       onSub=async(e)=>{
         e.preventDefault()
-        const {eInput,pInput}=this.state
+        const {eInput,pInput,nInput}=this.state
         try {
             console.log(eInput,pInput)
-            const response = await fetch("http://apin.abhiramreddy.shop/ec/user/login", {
+            const response = await fetch("http://apin.abhiramreddy.shop/ec/user/post", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
+                name: nInput,
                 email: eInput,
                 password: pInput,
               }),
@@ -49,7 +56,7 @@ class Login extends Component {
         
             if (response.ok) {
               const data = await response.json();
-              console.log("Login successful:", data);
+              console.log("Signup successful:", data);
               console.log(data.token)
               this.onSubmitSuccess(data.token,data.user_id)
         
@@ -79,20 +86,34 @@ class Login extends Component {
                             <img className='w-48 mb-6' src='https://res.cloudinary.com/dbs6hvga4/image/upload/v1708281057/Grocify-logos_black_copy_dvdsbh.png'/>
                         </div>
                         <h2 className="text-center text-2xl font-bold leading-tight text-black">
-                            Sign in to your account
+                            Create an account
                         </h2>
                         <p className="mt-2 text-center text-sm text-gray-600 ">
-                            Don&apos;t have an account?{' '}
+                            Already have an account?{' '}
                             <a
-                            href="/signup"
+                            href="/login"
                             title=""
                             className="font-semibold text-black transition-all duration-200 hover:underline"
                             >
-                            Create a free account
+                            Login to your Acoount
                             </a>
                         </p>
                         <form onSubmit={this.onSub} className="mt-8">
                             <div className="space-y-5">
+                            <div>
+                                <label htmlFor="" className="text-base font-medium text-gray-900">
+                                {' '}
+                                Name{' '}
+                                </label>
+                                <div className="mt-2">
+                                <input
+                                    className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                                    type="text"
+                                    placeholder="Name"
+                                    onChange={this.onChangeName}
+                                ></input>
+                                </div>
+                            </div>
                             <div>
                                 <label htmlFor="" className="text-base font-medium text-gray-900">
                                 {' '}
@@ -143,4 +164,4 @@ class Login extends Component {
     }
 }
 
-export default Login
+export default Signup
