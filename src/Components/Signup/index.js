@@ -42,7 +42,7 @@ class Signup extends Component {
         const {eInput,pInput,nInput}=this.state
         try {
             console.log(eInput,pInput)
-            const response = await fetch("https://apin.abhiramreddy.shop/ec/user/post", {
+            const response = await fetch("https://be.abhiramreddy.in/ec/user/post", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

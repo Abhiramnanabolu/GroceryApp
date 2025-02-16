@@ -13,7 +13,7 @@ class Profile extends Component{
         try {
             const userId = uId; 
           
-            const response = await fetch(`https://apin.abhiramreddy.shop/ec/user/${userId}`, {
+            const response = await fetch(`https://be.abhiramreddy.in/ec/user/${userId}`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
@@ -44,7 +44,7 @@ class Profile extends Component{
         try {
             const userId = uId; 
           
-            const response = await fetch(`https://apin.abhiramreddy.shop/ec/user/address/${userId}`, {
+            const response = await fetch(`https://be.abhiramreddy.in/ec/user/address/${userId}`, {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
